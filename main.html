@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+<head>
+<title>Aidan Goldthorpe - Software Engineer</title>
+<link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap\css\bootstrap-theme.css">
+<link rel="stylesheet" href="style.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic' rel='stylesheet' type='text/css'>
+
+<meta name="description" content="Aidan Goldthorpe - Software Engineer">
+<meta name="author" content="Aidan Goldthorpe">
+<script src="script/main.js"></script>
+<script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript" src="script/jquery.scrollTo/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="script/jquery-ui/jquery-ui.js"></script>
+<script type="text/javascript">
+jQuery(function ($) {
+
+	$.scrollTo(0);
+	
+	$('#ahome').click(function() {
+		$(window).scrollTo(0, 1200, {easing:'easeInOutCubic'});
+	});
+	
+	$('#astudy').click(function() {
+		$(window).scrollTo(document.getElementById('study'), 1200, {offset:-parseInt($('#study').css('margin-top')), easing:'easeInOutCubic'});
+	});
+	
+	$('#askills').click(function() {
+		$(window).scrollTo(document.getElementById('skills'), 1200, {offset:-parseInt($('#skills').css('margin-top')), easing:'easeInOutCubic'});
+	});
+	
+	$('#aexperience').click(function() {
+		$(window).scrollTo(document.getElementById('experience'), 1200, {offset:-parseInt($('#experience').css('margin-top')), easing:'easeInOutCubic'});
+	});
+	
+	$('li').hover(
+	function() {
+		this.style.textDecoration = 'underline';
+		$(this).css('cursor','pointer');
+	}, 
+	function() {
+		this.style.textDecoration = 'none';
+	});
+});
+</script>
+</head>
+
+
+<body>
+<div class="header" id="links">
+<ol class="links">
+<li id="aexperience">Experience</li>
+<li id="askills">Skills</li>
+<li id="astudy">Study</li>
+<li id="ahome"><h4>Aidan Goldthorpe</h4></li>
+</ol>
+</div>
+<div class="jumbotron">
+	<!--
+<div class="box" id="titledisplay">
+<p>0000 0001 0010 0011 0100 0101 0110 0111 
+   1000 1001 1010 1011 1100 1101 1110 1111</p>
+</div>
+-->
+<div class="box" id="titlecard">
+<h2>Aidan Goldthorpe</h2>
+<p>Second year software engineer at the University of Queensland</p>
+</div>
+</div>
+
+<div class="container" id="study">
+<div class="row">
+<h2 id='test'>Study</h2>
+<p>Aidan has studied a wide range of subjects in his first year at university,
+ranging from statics and dynamics to an introduction to software engineering
+and has achieved highly in all of them. In first semester he also received
+the Dean's Commendation for Academic Excellence. He has recently been invited to
+be a part of the EAIT Scholar's Program, and is intending to travel to the
+Technical University of Munich for exchange in the second half of 2016.</p>
+</div>
+</div>
+
+<div class="container" id="skills">
+<div class="row">
+<h2>Skills</h2>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="row">
+<h3>Languages</h3>
+</div>
+<div class="row">
+<h4>English</h4>
+<p>Proficient</p>
+</div>
+<div class="row">
+<h4>German</h4>
+<p>Competent</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="row">
+<h3>Software Engineering</h3>
+</div>
+<div class="row">
+<h4>Python</h4>
+<p>Rate</p>
+</div>
+<div class="row">
+<h4>Database Systems</h4>
+<p>Rate</p>
+</div>
+<div class="row">
+<h4>Website Design</h4>
+<p>Rate</p>
+</div>
+<div class="row">
+<h4>Arduino</h4>
+<p>Rate</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="row">
+</div>
+</div>
+</div>
+</div>
+
+<div class="container" id="experience">
+<div class="row">
+<h2>Experience</h2>
+</div>
+<div class="row">
+<div class="col-md-4">
+<h3>Sam's Pizza Bar</h3>
+<p>Aidan has been working at Sam's Pizza for over four years, 
+having started in October 2010. 
+</div>
+<div class="col-md-4">
+<h3>Tutoring</h3>
+<p>Aidan began tutoring several students in high school 
+at the start of 2014, primarily in maths and science subjects. 
+Teaching has been a valuable experience, increasing his 
+communication skills and improving his skills in a 
+variety of subjects.</p>
+</div>
+</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</body>
+</html>
