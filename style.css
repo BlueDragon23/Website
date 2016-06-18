@@ -1,9 +1,9 @@
 html {
 	overflow-y: scroll;
-	min-height: 100vh;
 }
 
 body {
+	/*Consider different background image? Play around with different styles*/
 	background-image: url("images/RedStripesDiag1.png");
 }
 
@@ -24,12 +24,13 @@ p {
 	position: fixed;
 	top: 0px;
 	left: 0px;
+	height: 60px;
 	width: 100%;
 	background-color: #242424;
 	color: #eeeeee;
 	list-style-type: none;
 	z-index: 10;
-	padding: 2% 5% 2% 2%;
+	padding: 0 5%;
 }
 
 .header ol {
@@ -38,11 +39,13 @@ p {
 
 .header ol li {
 	float: right;
-	margin: 0 2% 0 2%;
+	margin: 19px 2%;
+	font-size: 1.1em;
 }
 
-#ahome {
+#aHome {
 	float: left;
+	margin: 10px;
 }
 
 
@@ -68,20 +71,27 @@ p {
 	padding: 2.5%;
 }
 
-#titlecard {
-	position: absolute;
-	bottom: 10%;
-	left: 5%;
-	height: 200px;
-	width: 50%;
-}
+#titleCard {
+		position: absolute;
+		height: auto;
+		width: 70%;
+		top: 80px;
+		margin-left: 15%;
+		margin-right: 15%;
+		text-align: center;
+	}
 
-#titledisplay {
+#titleDisplay {
 	position: absolute;
 	top: 15%;
 	right: 5%;
 	height: 65%;
 	width: 20%;
+}
+
+#titleImage {
+	position: absolute;
+	left: -50%;
 }
 
 .container {
@@ -97,19 +107,66 @@ p {
 	height: auto;
 }
 
+.navicon {
+	visibility: hidden;
+}
+
 @media (min-width: 769px) {
-	#titlecard {
+	#titleCard {
+		position: absolute;
 		height: 200px;
+		width: 50%;
+		top: auto;
+		bottom: 10%;
+		left: 5%;
+		margin: 0;
+		text-align: left;
 	}
 }
 
-@media (max-width: 768px) {
-	#titlecard {
-		height: auto;
-		width: 70%;
-		top: 150px;
-		margin-left: 15%;
-		margin-right: 15%;
+@media (min-width: 481px) and (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+	/*Include retractable header*/
+	.header {
+		height: 140px;
+		display: none;
+	}
+	
+	.header ol li {
+		float: none;
+		clear: both;
+		margin: 0;
+		padding: 2px;
 		text-align: center;
 	}
+	
+	#aHome {
+		float: none;
+		margin: 0;
+	}
+	
+	#titleCard {
+		margin: 0;
+		width: 90%;
+		padding: 10px;
+	}
+	
+	.navicon {
+		visibility: visible;
+		font-size: 2em;
+		color: #eeeeee;
+		text-align: center;
+		position: fixed;
+		width: 50px;
+		height: 40px;
+		top: 0px;
+		left: 50%;
+		background-color: #242424;
+		border-radius: 0px 0px 10px 10px;
+		z-index: 4;
+		cursor: pointer;
+	}
+	
 }

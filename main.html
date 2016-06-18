@@ -6,7 +6,9 @@
 <link rel="stylesheet" href="bootstrap\css\bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap\css\bootstrap-theme.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ionicons.css">
 <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="images/icon.ico" type="image/x-icon" />
 
 <meta name="description" content="Aidan Goldthorpe - Software Engineer">
 <meta name="author" content="Aidan Goldthorpe">
@@ -19,19 +21,20 @@ jQuery(function ($) {
 
 	$.scrollTo(0);
 	
-	$('#ahome').click(function() {
+	/*Fix scroll position in smaller screen size*/
+	$('#aHome').click(function() {
 		$(window).scrollTo(0, 1200, {easing:'easeInOutCubic'});
 	});
 	
-	$('#astudy').click(function() {
+	$('#aStudy').click(function() {
 		$(window).scrollTo(document.getElementById('study'), 1200, {offset:-parseInt($('#study').css('margin-top')), easing:'easeInOutCubic'});
 	});
 	
-	$('#askills').click(function() {
+	$('#aSkills').click(function() {
 		$(window).scrollTo(document.getElementById('skills'), 1200, {offset:-parseInt($('#skills').css('margin-top')), easing:'easeInOutCubic'});
 	});
 	
-	$('#aexperience').click(function() {
+	$('#aExperience').click(function() {
 		$(window).scrollTo(document.getElementById('experience'), 1200, {offset:-parseInt($('#experience').css('margin-top')), easing:'easeInOutCubic'});
 	});
 	
@@ -43,6 +46,24 @@ jQuery(function ($) {
 	function() {
 		this.style.textDecoration = 'none';
 	});
+	
+	$('.navicon').click(function() {
+		dura = 400;
+		//Determine where to place button based on header size
+		fromTop = $(".header").css('height');
+		
+		$(".header").slideToggle(dura);
+		
+		//Animate button
+		if ($('.navicon').css('top') == "0px") {
+			$('.navicon').animate({top: fromTop}, dura);
+			$('.jumbotron').animate({top: fromTop}, dura);
+		} else {
+			$('.navicon').animate({top: "0px"}, dura);
+			$('.jumbotron').animate({top: "0px"}, dura);
+		}
+	});
+	
 });
 </script>
 </head>
@@ -51,23 +72,25 @@ jQuery(function ($) {
 <body>
 <div class="header" id="links">
 <ol class="links">
-<li id="aexperience">Experience</li>
-<li id="askills">Skills</li>
-<li id="astudy">Study</li>
-<li id="ahome"><h4>Aidan Goldthorpe</h4></li>
+<li id="aHome"><h4>Aidan Goldthorpe</h4></li>
+<li id="aExperience">Experience</li>
+<li id="aSkills">Skills</li>
+<li id="aStudy">Study</li>
 </ol>
 </div>
-<div class="jumbotron">
-	<!--
-<div class="box" id="titledisplay">
-<p>0000 0001 0010 0011 0100 0101 0110 0111 
-   1000 1001 1010 1011 1100 1101 1110 1111</p>
+<div class="navicon">
+		<i class="ion ion-navicon"></i>
 </div>
--->
-<div class="box" id="titlecard">
+<div class="jumbotron">
+<div class="box" id="titleCard">
 <h2>Aidan Goldthorpe</h2>
 <p>Second year software engineer at the University of Queensland</p>
 </div>
+<!--    Fix image display/find actual image
+<div class="box" id="titleDisplay">
+	<img src="images/titleImage.jpg" id="titleImage" height="200px"/>
+</div>
+-->
 </div>
 
 <div class="container" id="study">
